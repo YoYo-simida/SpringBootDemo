@@ -1,0 +1,11 @@
+2019-12-24 22:03:44.140  INFO 12532 --- [main] c.e.s.SpringbootdemoApplication          : Starting SpringbootdemoApplication on DESKTOP-NTDJG51 with PID 12532 (D:\SpringBootDemo\target\classes started by YoYo in D:\SpringBootDemo)
+2019-12-24 22:03:44.146  INFO 12532 --- [main] c.e.s.SpringbootdemoApplication          : No active profile set, falling back to default profiles: default
+2019-12-24 22:03:46.729  INFO 12532 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-12-24 22:03:46.730  INFO 12532 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.29]
+2019-12-24 22:03:46.912  INFO 12532 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-12-24 22:03:47.973  INFO 12532 --- [main] c.e.s.SpringbootdemoApplication          : Started SpringbootdemoApplication in 4.552 seconds (JVM running for 6.818)
+2019-12-24 22:04:00.695  INFO 12532 --- [http-nio-127.0.0.1-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-24 22:04:00.721  INFO 12532 --- [http-nio-127.0.0.1-8080-exec-1] c.e.s.controller.PersonController        : 调用成功：/show
+2019-12-24 22:04:00.741  INFO 12532 --- [http-nio-127.0.0.1-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-12-24 22:04:01.792  INFO 12532 --- [http-nio-127.0.0.1-8080-exec-1] com.zaxxer.hikari.pool.PoolBase          : HikariPool-1 - Driver does not support get/set network timeout for connections. (Receiver class oracle.jdbc.driver.T4CConnection does not define or inherit an implementation of the resolved method abstract getNetworkTimeout()I of interface java.sql.Connection.)
+2019-12-24 22:04:01.796  INFO 12532 --- [http-nio-127.0.0.1-8080-exec-1] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.

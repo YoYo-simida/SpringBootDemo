@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--头文件，固定写法 注意别写错哦-->
+<configuration>
+
+    <!--允许传入的 javaType 为 null 给 jdbcType start-->
+    <!--请注意，注意配置项的顺序哦-->
+    <settings>
+        <setting name="logImpl" value="SLF4J"/> <!--指定 Mybatis 所用日志的具体实现-->
+        <setting name="jdbcTypeForNull" value="NULL"/> <!--允许插入 null, 默认不允许-->
+    </settings>
+    <!--允许传入的 javaType 为 null 给 jdbcType end-->
+
+    <!--设置别名, 简化书写 start-->
+    <typeAliases>
+        <typeAlias type="java.lang.Integer" alias="Integer"/>
+        <!--<package name="com.example.springbootdemo.domain.PersonDomain"/>-->
+    </typeAliases>
+    <!--设置别名, 简化书写 end-->
+</configuration>
+

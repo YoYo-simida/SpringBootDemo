@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!--以上，文档声明部分: 注意格式别写错了-->
+
+<!--namespace 参数: 用来绑定 DAO(又称 Mapper) 接口-->
+<!--命名规则: 必须和 Mapper interface 路径一致-->
+<mapper namespace="com.example.springbootdemo.mapper.PersonMapper">
+    <!--定义返回值类型，其中 id=方法名，type=返回值类型，result=数据库列和实体类属性对应 start-->
+    <resultMap id="personMap" type="com.example.springbootdemo.domain.PersonDomain">
+        <result column="PERSON_NO" property="personNo" jdbcType="INTEGER"/> <!--jdbcType 严格大写-->
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="SEX" property="sex" jdbcType="VARCHAR"/>
+        <result column="BIRTHDAY" property="birthday" jdbcType="DATE"/>
+    </resultMap>
+    <!--定义返回值类型，其中 id=方法名，type=返回值类型，result=数据库列和实体类属性对应 end-->
+    <!--具体的数据库操作 start-->
+    <select id="getPersonAll" resultMap="personMap">
+        select person_no, name, sex, birthday
+          from person
+    </select>
+
+    <select id="getPersonByNo" parameterType="Integer" resultMap="personMap">
+        select person_no, name, sex, birthday
+          from person
+         where person_no = #{personNo}
+    </select>
+
+    <insert id="insertPerson" parameterType="com.example.springbootdemo.domain.PersonDomain">
+        insert into person (person_no, name, sex, birthday)
+        values (#{personNo}, #{name}, #{sex}, #{birthday})
+    </insert>
+
+    <update id="updatePerson" parameterType="com.example.springbootdemo.domain.PersonDomain">
+        update person
+           set name = #{name},
+               sex = #{sex},
+               birthday = #{birthday}
+         where person_no = #{personNo}
+    </update>
+
+    <delete id="deletePerson" parameterType="com.example.springbootdemo.domain.PersonDomain">
+        delete
+          from person
+         where person_no = #{personNo}
+    </delete>
+
+    <parameterMap id="procedurePersonMap" type="java.util.Map">
+        <parameter property="v_person_no" mode="IN" jdbcType="INTEGER"/><!--jdbcType 严格大写-->
+        <parameter property="v_flag" mode="OUT" jdbcType="VARCHAR"/>
+    </parameterMap>
+    <select id="procedurePerson" parameterMap="procedurePersonMap" statementType="CALLABLE">
+        {CALL pro_person(?,?)}
+    </select>
+</mapper>

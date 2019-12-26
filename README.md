@@ -12,5 +12,5 @@ IDEA 部署 Spring Boot + Mybaits + Maven + Oracle 入门案例
  
 # 环境准备
  - 若想在本地运行，请修改以下文件
- - application.properties: 修改为你本地的 Oracle 用户名、等
+ - application.properties: 修改为你本地的 Oracle 用户名、密码 等
  - 在该用户下创建 person 表和存储过程，参考源码中的 `请修改-person.sql`
